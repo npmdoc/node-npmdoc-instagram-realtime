@@ -1,0 +1,848 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/instagram-realtime/instagram-realtime"
+
+    >instagram-realtime (v0.0.4)</a>
+</h1>
+<h4>Event-driven, Object-oriented Instagram API Wrapper</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.instagram-realtime">module instagram-realtime</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.instagram-realtime">
+            function <span class="apidocSignatureSpan"></span>instagram-realtime
+            <span class="apidocSignatureSpan">(server, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.MediaFetcher">
+            function <span class="apidocSignatureSpan">instagram-realtime.</span>MediaFetcher
+            <span class="apidocSignatureSpan">(params)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.SubscriptionManager">
+            function <span class="apidocSignatureSpan">instagram-realtime.</span>SubscriptionManager
+            <span class="apidocSignatureSpan">(params)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.super_">
+            function <span class="apidocSignatureSpan">instagram-realtime.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.toString">
+            function <span class="apidocSignatureSpan">instagram-realtime.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">instagram-realtime.</span>MediaFetcher.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">instagram-realtime.</span>SubscriptionManager.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.instagram-realtime.MediaFetcher">module instagram-realtime.MediaFetcher</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.MediaFetcher.MediaFetcher">
+            function <span class="apidocSignatureSpan">instagram-realtime.</span>MediaFetcher
+            <span class="apidocSignatureSpan">(params)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.instagram-realtime.MediaFetcher.prototype">module instagram-realtime.MediaFetcher.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.MediaFetcher.prototype.get_geography">
+            function <span class="apidocSignatureSpan">instagram-realtime.MediaFetcher.prototype.</span>get_geography
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.MediaFetcher.prototype.get_location">
+            function <span class="apidocSignatureSpan">instagram-realtime.MediaFetcher.prototype.</span>get_location
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.MediaFetcher.prototype.get_tag">
+            function <span class="apidocSignatureSpan">instagram-realtime.MediaFetcher.prototype.</span>get_tag
+            <span class="apidocSignatureSpan">(tag)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.MediaFetcher.prototype.get_user">
+            function <span class="apidocSignatureSpan">instagram-realtime.MediaFetcher.prototype.</span>get_user
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.instagram-realtime.SubscriptionManager">module instagram-realtime.SubscriptionManager</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.SubscriptionManager.SubscriptionManager">
+            function <span class="apidocSignatureSpan">instagram-realtime.</span>SubscriptionManager
+            <span class="apidocSignatureSpan">(params)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.instagram-realtime.SubscriptionManager.prototype">module instagram-realtime.SubscriptionManager.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.SubscriptionManager.prototype.subscribe_geography">
+            function <span class="apidocSignatureSpan">instagram-realtime.SubscriptionManager.prototype.</span>subscribe_geography
+            <span class="apidocSignatureSpan">(lat, lng, rad)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.SubscriptionManager.prototype.subscribe_location">
+            function <span class="apidocSignatureSpan">instagram-realtime.SubscriptionManager.prototype.</span>subscribe_location
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.SubscriptionManager.prototype.subscribe_tag">
+            function <span class="apidocSignatureSpan">instagram-realtime.SubscriptionManager.prototype.</span>subscribe_tag
+            <span class="apidocSignatureSpan">(tag)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.SubscriptionManager.prototype.subscribe_user">
+            function <span class="apidocSignatureSpan">instagram-realtime.SubscriptionManager.prototype.</span>subscribe_user
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.SubscriptionManager.prototype.unsubscribe">
+            function <span class="apidocSignatureSpan">instagram-realtime.SubscriptionManager.prototype.</span>unsubscribe
+            <span class="apidocSignatureSpan">(id)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.instagram-realtime.toString">module instagram-realtime.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.toString.toString">
+            function <span class="apidocSignatureSpan">instagram-realtime.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.instagram-realtime" id="apidoc.module.instagram-realtime">module instagram-realtime</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.instagram-realtime.instagram-realtime" id="apidoc.element.instagram-realtime.instagram-realtime">
+        function <span class="apidocSignatureSpan"></span>instagram-realtime
+        <span class="apidocSignatureSpan">(server, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function InstagramStream(server, opts) {
+  if (!(this instanceof InstagramStream)) {
+    return new InstagramStream(server, opts);
+  }
+
+  // Call super constructor
+  events.EventEmitter.call(this);
+
+  // Shift over parameters, if there is no server in the first slot
+  if (typeof server === &#x27;object&#x27; &#x26;&#x26; typeof server.listen !== &#x27;function&#x27;) {
+    server  = null;
+    opts    = server;
+  }
+
+  opts = opts || {};
+
+  // Warn user about invalid options
+  if (!opts.client_id) {
+    console.log(&#x27;Invalid &#x22;client_id&#x22;&#x27;.yellow);
+  }
+  if (!opts.client_secret) {
+    console.log(&#x27;Invalid &#x22;client_secret&#x22;&#x27;.yellow);
+  }
+  if (!opts.url) {
+    console.log(&#x27;Invalid &#x22;url&#x22;&#x27;.yellow);
+  }
+  if (!opts.callback_path) {
+    console.log(&#x27;Invalid &#x22;callback_path&#x22;&#x27;.yellow);
+  }
+
+  // Create object
+  this.client_id      = opts.client_id;
+  this.client_secret  = opts.client_secret;
+  this.callback_url   = opts.url + &#x27;/&#x27; + opts.callback_path;
+  this.url            = opts.url;
+  this.callback_path  = opts.callback_path;
+
+  this.last = {};
+  this.last.response  = undefined;
+  this.last.body      = undefined;
+  this.last_body      = undefined;    // TODO: Remove this
+
+  // Defaults
+  this.callback_path = this.callback_path ? this.callback_path : &#x27;callback&#x27;;
+  var self = this;
+
+  var _sub = new SubscriptionManager({
+    parent  : this,
+    client_id     : this.client_id,
+    client_secret : this.client_secret,
+    callback_url  : this.callback_url
+  });
+
+  var _fetch = new MediaFetcher({
+    parent  : this,
+    client_id     : this.client_id,
+    client_secret : this.client_secret,
+    callback_url  : this.callback_url
+  });
+
+  // Route &#x27;/:callback&#x27; -&#x3e; custom handlers
+  ~function () {
+    var listeners = server.listeners(&#x27;request&#x27;);
+
+    var chain = connect();
+
+    chain.use(connect.bodyParser());
+
+    chain.use(function (req, resp, next) {
+      var pathname = url.parse(req.url).pathname;
+      if (req.method === &#x27;GET&#x27; &#x26;&#x26; pathname === &#x27;/&#x27; + self.callback_path) {
+        var hub_challenge = url.parse(req.url, true).query[&#x27;hub.challenge&#x27;];
+        resp.writeHead(200, { &#x27;Content-Type&#x27;: &#x27;text/plain;charset=utf-8&#x27; });
+        resp.end(hub_challenge ? hub_challenge : &#x27;🍕&#x27;);
+      }
+      else if (req.method === &#x27;POST&#x27; &#x26;&#x26; pathname === &#x27;/&#x27; + self.callback_path) {
+        resp.writeHead(200, { &#x27;Content-Type&#x27;: &#x27;text/plain;charset=utf-8&#x27; });
+        resp.end(&#x27;🍕&#x27;);
+        route_traffic(req.body, req);
+      }
+      else {
+        next();
+      }
+    });
+
+    chain.use(function (req, resp) {
+      for (var k = 0; k &#x3c; listeners.length; k++) {
+        listeners[k].call(server, req, resp);
+      }
+    });
+
+    server.removeAllListeners(&#x27;request&#x27;);
+    server.on(&#x27;request&#x27;, chain);
+  }();
+
+  this.subscribe = function (term) {
+    // Contains subscription to users
+    if (typeof term.user !== &#x27;undefined&#x27; &#x26;&#x26; term.user) {
+      _sub.subscribe_user();
+    }
+    // Contains subscription to tag
+    if (typeof term.tag === &#x27;string&#x27; &#x26;&#x26; term.tag !== &#x27;&#x27;) {
+      _sub.subscribe_tag(term.tag);
+    }
+    // Contains subscription to location-id
+    if ((typeof term.location === &#x27;number&#x27; || typeof term.location === &#x27;string&#x27;) &#x26;&#x26; term.location !== &#x27;&#x27;) {
+      _sub.subscribe_location(term.location);
+    }
+    // Contains subscription to geography coordinates
+    if (typeof term.lat === &#x27;number&#x27; &#x26;&#x26; typeof term.lng === &#x27;number&#x27; &#x26;&#x26; typeof term.radius === &#x27;number&#x27;) {
+      _sub.subscribe_geography(term.location);
+    }
+  };
+
+  this.unsubscribe = function (id) {
+    id = id || &#x27;all&#x27;;
+    _sub.unsubscribe(id);
+  }
+<span class="apidocCodeCommentSpan">  /**
+   * Request a Media Search from Instagram Based on an HTTP-Request
+   * ~~~
+   * @param {!Request Body} body an HTTP-request from the InstagramAPI containing
+   * object-id and subscription-id information. This can determine which type of
+   * subscription was sent, and what its purpose was.
+   */
+</span>  function route_traffic (body) {
+    for (var k = 0; k &#x3c; body.length; k++) {
+      route_individual_media_response(body[k]);
+    }
+  }
+
+  function route_individual_media_response (result) {
+    var sub_type = result.object;
+    var sub_id = result.subscription_id;
+    var obj_id = result ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.instagram-realtime.MediaFetcher" id="apidoc.element.instagram-realtime.MediaFetcher">
+        function <span class="apidocSignatureSpan">instagram-realtime.</span>MediaFetcher
+        <span class="apidocSignatureSpan">(params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MediaFetcher(params) {
+  var self = this;
+  self.parent = params.parent;
+  self.server = params.server;
+  self.client_id      = params.client_id;
+  self.client_secret  = params.client_secret;
+  self.callback_url   = params.callback_url;
+
+  // Request Media Handler
+  self.request_media_handler = function (error, resp, body) {
+    if (resp.statusCode === 200) {
+      self.parent.emit(&#x27;new&#x27;, resp, body);
+      self.parent.last.response = resp;
+      self.parent.last.body     = body;
+      self.parent.last_body     = body;
+    }
+    else {
+      self.parent.emit(&#x27;new/error&#x27;, resp, body);
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.instagram-realtime.SubscriptionManager" id="apidoc.element.instagram-realtime.SubscriptionManager">
+        function <span class="apidocSignatureSpan">instagram-realtime.</span>SubscriptionManager
+        <span class="apidocSignatureSpan">(params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SubscriptionManager(params) {
+  this.parent = params.parent;
+  this.server = params.server;
+  this.client_id      = params.client_id;
+  this.client_secret  = params.client_secret;
+  this.callback_url   = params.callback_url;
+  var self = this;
+
+  this.subscribe_handler = function (error, resp, body) {
+    if (resp.statusCode === 200) {
+      self.parent.emit(&#x27;subscribe&#x27;, resp, body);
+    }
+    else {
+      self.parent.emit(&#x27;subscribe/error&#x27;, error, resp, body);
+    }
+  };
+
+  this.unsubscribe_handler = function (error, resp, body) {
+    if (resp.statusCode === 200) {
+      self.parent.emit(&#x27;unsubscribe&#x27;, resp, body);
+    }
+    else {
+      self.parent.emit(&#x27;unsubscribe/error&#x27;, error, resp, body);
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.instagram-realtime.super_" id="apidoc.element.instagram-realtime.super_">
+        function <span class="apidocSignatureSpan">instagram-realtime.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.instagram-realtime.toString" id="apidoc.element.instagram-realtime.toString">
+        function <span class="apidocSignatureSpan">instagram-realtime.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.instagram-realtime.MediaFetcher" id="apidoc.module.instagram-realtime.MediaFetcher">module instagram-realtime.MediaFetcher</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.instagram-realtime.MediaFetcher.MediaFetcher" id="apidoc.element.instagram-realtime.MediaFetcher.MediaFetcher">
+        function <span class="apidocSignatureSpan">instagram-realtime.</span>MediaFetcher
+        <span class="apidocSignatureSpan">(params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MediaFetcher(params) {
+  var self = this;
+  self.parent = params.parent;
+  self.server = params.server;
+  self.client_id      = params.client_id;
+  self.client_secret  = params.client_secret;
+  self.callback_url   = params.callback_url;
+
+  // Request Media Handler
+  self.request_media_handler = function (error, resp, body) {
+    if (resp.statusCode === 200) {
+      self.parent.emit(&#x27;new&#x27;, resp, body);
+      self.parent.last.response = resp;
+      self.parent.last.body     = body;
+      self.parent.last_body     = body;
+    }
+    else {
+      self.parent.emit(&#x27;new/error&#x27;, resp, body);
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.instagram-realtime.MediaFetcher.prototype" id="apidoc.module.instagram-realtime.MediaFetcher.prototype">module instagram-realtime.MediaFetcher.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.instagram-realtime.MediaFetcher.prototype.get_geography" id="apidoc.element.instagram-realtime.MediaFetcher.prototype.get_geography">
+        function <span class="apidocSignatureSpan">instagram-realtime.MediaFetcher.prototype.</span>get_geography
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get_geography = function (id) {
+  var url = &#x27;https://api.instagram.com/v1&#x27;;
+  url += &#x27;/geographies/&#x27; + id;
+  url += &#x27;/media/recent&#x27;;
+  url += &#x27;?client_id=&#x27;  + this.client_id;
+
+  request.get(url, this.request_media_handler);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.instagram-realtime.MediaFetcher.prototype.get_location" id="apidoc.element.instagram-realtime.MediaFetcher.prototype.get_location">
+        function <span class="apidocSignatureSpan">instagram-realtime.MediaFetcher.prototype.</span>get_location
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get_location = function (id) {
+  var url = &#x27;https://api.instagram.com/v1&#x27;;
+  url += &#x27;/locations/&#x27; + id;
+  url += &#x27;/media/recent&#x27;;
+  url += &#x27;?client_id=&#x27;  + this.client_id;
+
+  request.get(url, this.request_media_handler);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.instagram-realtime.MediaFetcher.prototype.get_tag" id="apidoc.element.instagram-realtime.MediaFetcher.prototype.get_tag">
+        function <span class="apidocSignatureSpan">instagram-realtime.MediaFetcher.prototype.</span>get_tag
+        <span class="apidocSignatureSpan">(tag)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get_tag = function (tag) {
+  var url = &#x27;https://api.instagram.com/v1&#x27;;
+  url += &#x27;/tags/&#x27; + tag;
+  url += &#x27;/media/recent&#x27;;
+  url += &#x27;?client_id=&#x27;  + this.client_id;
+
+  request.get(url, this.request_media_handler);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.instagram-realtime.MediaFetcher.prototype.get_user" id="apidoc.element.instagram-realtime.MediaFetcher.prototype.get_user">
+        function <span class="apidocSignatureSpan">instagram-realtime.MediaFetcher.prototype.</span>get_user
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get_user = function (id) {
+  if (typeof id !== &#x27;string&#x27;) {
+    console.log(&#x27;User search must have id\&#x27;s&#x27;);
+  }
+
+  var url = &#x27;https://api.instagram.com/v1&#x27;;
+  url += &#x27;/users/&#x27; + id;
+  url += &#x27;/media/recent&#x27;;
+  url += &#x27;?client_id=&#x27;  + this.client_id;
+
+  request.get(url, this.request_media_handler);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.instagram-realtime.SubscriptionManager" id="apidoc.module.instagram-realtime.SubscriptionManager">module instagram-realtime.SubscriptionManager</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.instagram-realtime.SubscriptionManager.SubscriptionManager" id="apidoc.element.instagram-realtime.SubscriptionManager.SubscriptionManager">
+        function <span class="apidocSignatureSpan">instagram-realtime.</span>SubscriptionManager
+        <span class="apidocSignatureSpan">(params)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function SubscriptionManager(params) {
+  this.parent = params.parent;
+  this.server = params.server;
+  this.client_id      = params.client_id;
+  this.client_secret  = params.client_secret;
+  this.callback_url   = params.callback_url;
+  var self = this;
+
+  this.subscribe_handler = function (error, resp, body) {
+    if (resp.statusCode === 200) {
+      self.parent.emit(&#x27;subscribe&#x27;, resp, body);
+    }
+    else {
+      self.parent.emit(&#x27;subscribe/error&#x27;, error, resp, body);
+    }
+  };
+
+  this.unsubscribe_handler = function (error, resp, body) {
+    if (resp.statusCode === 200) {
+      self.parent.emit(&#x27;unsubscribe&#x27;, resp, body);
+    }
+    else {
+      self.parent.emit(&#x27;unsubscribe/error&#x27;, error, resp, body);
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.instagram-realtime.SubscriptionManager.prototype" id="apidoc.module.instagram-realtime.SubscriptionManager.prototype">module instagram-realtime.SubscriptionManager.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.instagram-realtime.SubscriptionManager.prototype.subscribe_geography" id="apidoc.element.instagram-realtime.SubscriptionManager.prototype.subscribe_geography">
+        function <span class="apidocSignatureSpan">instagram-realtime.SubscriptionManager.prototype.</span>subscribe_geography
+        <span class="apidocSignatureSpan">(lat, lng, rad)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subscribe_geography = function (lat, lng, rad) {
+  lng = typeof lng === &#x27;number&#x27; ? lng : 10;
+  lat = typeof lat === &#x27;number&#x27; ? lat : 10;
+  rad = typeof rad === &#x27;number&#x27; &#x26;&#x26; rad &#x3e;= 0 ? rad : 1000;
+  var url = &#x27;https://api.instagram.com/v1/subscriptions/&#x27;;
+  var data = {
+    client_id     : this.client_id,
+    client_secret : this.client_secret,
+    object        : &#x27;geography&#x27;,
+    aspect        : &#x27;media&#x27;,
+    lat           : lat,
+    lng           : lng,
+    radius        : rad,
+    callback_url  : this.callback_url
+  };
+  request.post(url, { form : data }, this.subscribe_handler);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.instagram-realtime.SubscriptionManager.prototype.subscribe_location" id="apidoc.element.instagram-realtime.SubscriptionManager.prototype.subscribe_location">
+        function <span class="apidocSignatureSpan">instagram-realtime.SubscriptionManager.prototype.</span>subscribe_location
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subscribe_location = function (id) {
+  &#x27;use strict&#x27;;
+  var url = &#x27;https://api.instagram.com/v1/subscriptions/&#x27;;
+  var data = {
+    client_id     : this.client_id,
+    client_secret : this.client_secret,
+    object        : &#x27;location&#x27;,
+    aspect        : &#x27;media&#x27;,
+    object_id     : id,
+    callback_url  : this.callback_url
+  };
+  request.post(url, { form : data }, this.subscribe_handler);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.instagram-realtime.SubscriptionManager.prototype.subscribe_tag" id="apidoc.element.instagram-realtime.SubscriptionManager.prototype.subscribe_tag">
+        function <span class="apidocSignatureSpan">instagram-realtime.SubscriptionManager.prototype.</span>subscribe_tag
+        <span class="apidocSignatureSpan">(tag)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subscribe_tag = function (tag) {
+  &#x27;use strict&#x27;;
+  var url = &#x27;https://api.instagram.com/v1/subscriptions/&#x27;;
+  var data = {
+    client_id     : this.client_id,
+    client_secret : this.client_secret,
+    object        : &#x27;tag&#x27;,
+    aspect        : &#x27;media&#x27;,
+    object_id     : tag,
+    callback_url  : this.callback_url
+  };
+  request.post(url, { form : data }, this.subscribe_handler);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.instagram-realtime.SubscriptionManager.prototype.subscribe_user" id="apidoc.element.instagram-realtime.SubscriptionManager.prototype.subscribe_user">
+        function <span class="apidocSignatureSpan">instagram-realtime.SubscriptionManager.prototype.</span>subscribe_user
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subscribe_user = function () {
+  &#x27;use strict&#x27;;
+  var url = &#x27;https://api.instagram.com/v1/subscriptions/&#x27;;
+  var data = {
+    client_id     : this.client_id,
+    client_secret : this.client_secret,
+    object        : &#x27;user&#x27;,
+    aspect        : &#x27;media&#x27;,
+    callback_url  : this.callback_url
+  };
+  request.post(url, { form : data }, this.subscribe_handler);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.instagram-realtime.SubscriptionManager.prototype.unsubscribe" id="apidoc.element.instagram-realtime.SubscriptionManager.prototype.unsubscribe">
+        function <span class="apidocSignatureSpan">instagram-realtime.SubscriptionManager.prototype.</span>unsubscribe
+        <span class="apidocSignatureSpan">(id)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unsubscribe = function (id) {
+  &#x27;use strict&#x27;;
+  id = typeof id !== &#x27;undefined&#x27; ? id : &#x27;all&#x27;;
+  var url = &#x27;https://api.instagram.com/v1/subscriptions&#x27;;
+  url += &#x27;?client_secret=&#x27;  + this.client_secret;
+  url += &#x27;&#x26;client_id=&#x27;      + this.client_id;
+  url += &#x27;&#x26;object=&#x27;         + id;
+  request.del(url, this.unsubscribe_handler);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+
+app.get(&#x27;/&#x27;, function (req, resp) {
+  resp.set(&#x27;Content-Type&#x27;, &#x27;text/plain; charset=utf-8&#x27;);
+  resp.end(&#x27;🍕🏊&#x27;);
+});
+
+stream.<span class="apidocCodeKeywordSpan">unsubscribe</span>(&#x27;all&#x27;);
+```
+
+## Methods
+
+Brief description of functions
+
+### subscribe
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.instagram-realtime.toString" id="apidoc.module.instagram-realtime.toString">module instagram-realtime.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.instagram-realtime.toString.toString" id="apidoc.element.instagram-realtime.toString.toString">
+        function <span class="apidocSignatureSpan">instagram-realtime.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
