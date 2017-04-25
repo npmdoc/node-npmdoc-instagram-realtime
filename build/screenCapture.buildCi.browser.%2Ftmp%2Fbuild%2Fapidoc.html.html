@@ -92,15 +92,6 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.toString">
-            function <span class="apidocSignatureSpan">instagram-realtime.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-        <li>
-
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">instagram-realtime.</span>MediaFetcher.prototype</span>
 
         </li>
@@ -222,19 +213,6 @@
             <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.SubscriptionManager.prototype.unsubscribe">
             function <span class="apidocSignatureSpan">instagram-realtime.SubscriptionManager.prototype.</span>unsubscribe
             <span class="apidocSignatureSpan">(id)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.instagram-realtime.toString">module instagram-realtime.toString</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.instagram-realtime.toString.toString">
-            function <span class="apidocSignatureSpan">instagram-realtime.</span>toString
-            <span class="apidocSignatureSpan">()</span>
             </a>
 
         </li>
@@ -480,21 +458,6 @@
 
 
 
-    <h2>
-        <a href="#apidoc.element.instagram-realtime.toString" id="apidoc.element.instagram-realtime.toString">
-        function <span class="apidocSignatureSpan">instagram-realtime.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
 
 
 
@@ -557,7 +520,23 @@
 
   request.get(url, this.request_media_handler);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    break;
+
+  case 'location':
+    _fetch.get_location(obj_id);
+    break;
+
+  case 'geography':
+    _fetch.<span class="apidocCodeKeywordSpan">get_geography</span>(obj_id);
+    break;
+
+  default:
+    console.log('bad media update');
+    return;
+  }
+}
+...</pre></li>
     </ul>
 
 
@@ -577,7 +556,23 @@
 
   request.get(url, this.request_media_handler);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  break;
+
+case 'tag':
+  _fetch.get_tag(obj_id);
+  break;
+
+case 'location':
+  _fetch.<span class="apidocCodeKeywordSpan">get_location</span>(obj_id);
+  break;
+
+case 'geography':
+  _fetch.get_geography(obj_id);
+  break;
+
+default:
+...</pre></li>
     </ul>
 
 
@@ -597,7 +592,23 @@
 
   request.get(url, this.request_media_handler);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case 'user':
+  console.log('routing user-media traffic');
+  console.log('NOTE: this is *not* implemented');
+  _fetch.get_user();
+  break;
+
+case 'tag':
+  _fetch.<span class="apidocCodeKeywordSpan">get_tag</span>(obj_id);
+  break;
+
+case 'location':
+  _fetch.get_location(obj_id);
+  break;
+
+case 'geography':
+...</pre></li>
     </ul>
 
 
@@ -621,7 +632,23 @@
 
   request.get(url, this.request_media_handler);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  console.log('obj_id = ' + obj_id);
+}
+
+switch (sub_type) {
+case 'user':
+  console.log('routing user-media traffic');
+  console.log('NOTE: this is *not* implemented');
+  _fetch.<span class="apidocCodeKeywordSpan">get_user</span>();
+  break;
+
+case 'tag':
+  _fetch.get_tag(obj_id);
+  break;
+
+case 'location':
+...</pre></li>
     </ul>
 
 
@@ -698,7 +725,25 @@
   };
   request.post(url, { form : data }, this.subscribe_handler);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+  // Contains subscription to location-id
+  if ((typeof term.location === 'number' || typeof term.location === 'string') &amp;&amp; term.location !== &amp;#
+x27;') {
+    _sub.subscribe_location(term.location);
+  }
+  // Contains subscription to geography coordinates
+  if (typeof term.lat === 'number' &amp;&amp; typeof term.lng === 'number' &amp;&amp; typeof term.radius
+ === 'number') {
+    _sub.<span class="apidocCodeKeywordSpan">subscribe_geography</span>(term.location);
+  }
+};
+
+this.unsubscribe = function (id) {
+  id = id || 'all';
+  _sub.unsubscribe(id);
+}
+...</pre></li>
     </ul>
 
 
@@ -723,7 +768,24 @@
   };
   request.post(url, { form : data }, this.subscribe_handler);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+  // Contains subscription to tag
+  if (typeof term.tag === 'string' &amp;&amp; term.tag !== '') {
+    _sub.subscribe_tag(term.tag);
+  }
+  // Contains subscription to location-id
+  if ((typeof term.location === 'number' || typeof term.location === 'string') &amp;&amp; term.location !== &amp;#
+x27;') {
+    _sub.<span class="apidocCodeKeywordSpan">subscribe_location</span>(term.location);
+  }
+  // Contains subscription to geography coordinates
+  if (typeof term.lat === 'number' &amp;&amp; typeof term.lng === 'number' &amp;&amp; typeof term.radius
+ === 'number') {
+    _sub.subscribe_geography(term.location);
+  }
+};
+...</pre></li>
     </ul>
 
 
@@ -748,7 +810,25 @@
   };
   request.post(url, { form : data }, this.subscribe_handler);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  this.subscribe = function (term) {
+// Contains subscription to users
+if (typeof term.user !== 'undefined' &amp;&amp; term.user) {
+  _sub.subscribe_user();
+}
+// Contains subscription to tag
+if (typeof term.tag === 'string' &amp;&amp; term.tag !== '') {
+  _sub.<span class="apidocCodeKeywordSpan">subscribe_tag</span>(term.tag);
+}
+// Contains subscription to location-id
+if ((typeof term.location === 'number' || typeof term.location === 'string') &amp;&amp; term.location !== &amp;#
+x27;') {
+  _sub.subscribe_location(term.location);
+}
+// Contains subscription to geography coordinates
+if (typeof term.lat === 'number' &amp;&amp; typeof term.lng === 'number' &amp;&amp; typeof term.radius === &amp;#
+x27;number') {
+...</pre></li>
     </ul>
 
 
@@ -772,7 +852,24 @@
   };
   request.post(url, { form : data }, this.subscribe_handler);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  server.removeAllListeners('request');
+  server.on('request', chain);
+}();
+
+this.subscribe = function (term) {
+  // Contains subscription to users
+  if (typeof term.user !== 'undefined' &amp;&amp; term.user) {
+    _sub.<span class="apidocCodeKeywordSpan">subscribe_user</span>();
+  }
+  // Contains subscription to tag
+  if (typeof term.tag === 'string' &amp;&amp; term.tag !== '') {
+    _sub.subscribe_tag(term.tag);
+  }
+  // Contains subscription to location-id
+  if ((typeof term.location === 'number' || typeof term.location === 'string') &amp;&amp; term.location !== &amp;#
+x27;') {
+...</pre></li>
     </ul>
 
 
@@ -810,24 +907,6 @@ Brief description of functions
 
 ### subscribe
 ...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.instagram-realtime.toString" id="apidoc.module.instagram-realtime.toString">module instagram-realtime.toString</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.instagram-realtime.toString.toString" id="apidoc.element.instagram-realtime.toString.toString">
-        function <span class="apidocSignatureSpan">instagram-realtime.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
 
 
