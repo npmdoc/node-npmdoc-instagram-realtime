@@ -1,4 +1,7 @@
-# api documentation for  [instagram-realtime (v0.0.4)](https://github.com/instagram-realtime/instagram-realtime)  [![npm package](https://img.shields.io/npm/v/npmdoc-instagram-realtime.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-instagram-realtime) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-instagram-realtime.svg)](https://travis-ci.org/npmdoc/node-npmdoc-instagram-realtime)
+# npmdoc-instagram-realtime
+
+#### basic api documentation for  [instagram-realtime (v0.0.4)](https://github.com/instagram-realtime/instagram-realtime)  [![npm package](https://img.shields.io/npm/v/npmdoc-instagram-realtime.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-instagram-realtime) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-instagram-realtime.svg)](https://travis-ci.org/npmdoc/node-npmdoc-instagram-realtime)
+
 #### Event-driven, Object-oriented Instagram API Wrapper
 
 [![NPM](https://nodei.co/npm/instagram-realtime.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/instagram-realtime)
@@ -85,7 +88,8 @@
             },
             "pkgid": "instagram-realtime@0.0.4"
         }
-    ]
+    ],
+    "bin": {}
 }
 ```
 
